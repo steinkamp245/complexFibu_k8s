@@ -1,7 +1,7 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: lutz-k8s-tls
+  name: lutz-k8s-com-tls
 spec:
   secretName: lutz-k8s-com
   issuerRef:
