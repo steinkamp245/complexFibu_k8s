@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: lutz-k8s-com-tls
+spec:
+  secretName: lutz-k8s-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: lutz-k8s.com
+  dnsNames:
+    - lutz-k8s.com
+    - www.lutz-k8s.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+      domains:
+        - lutz-k8s.com
+        - www.lutz-k8s.com
